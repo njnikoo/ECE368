@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <stdlib.h>
+long *Load_File(char * Filename,int * Size);
+int Save_File(char * Filename,long * Array,int Size);
+void Shell_Insertion_Sort(long *Array, int Size, double *N_Comp, double *N_Move);
+void Shell_Selection_Sort(long *Array, int Size, double *N_Comp, double *N_Move);
+
+long *Load_File(char * Filename,int * Size)
+{
+  FILE * fptr;
+  int val;
+  fptr = fopen(Filename,"r");
+  if(fptr == NULL)
+    {
+      printf("Did not load File!\n");
+      return EXIT_FAILURE;
+    }
+  while(fscanf(fptr,"%d", &val) < Size + 1)//need to store in array confused on loading vs putting into the array.
+    {
+      printf("%d",val);
+    }
+  fclose(fptr);
+  
+
+}
+
+
+void Shell_Insertion_Sort(long *Array, int Size, double *N_Comp, double *N_Move);
+{
+  int i,j,k,temp,gap,seqcount;
+  k = 1;
+  q = 0;
+  while(k < Size){ // to generate the sequence 3 ^ q 
+    k = 3 * k;
+    q = q + 1;
+  }
+  k = k / 3;
+  q = q - 1;
+  while(k > 1){
+    gap = k;
+    seqcount = p;
+    do{
+      gap = (gap * 2)/3;
+      seqcount = seqcount - 1;
+
+    }while(seqcount >= 0)
+      k = k / 3;
+    p = p - 1;
+    for(j = k;j< Size;j++){
+      temp = Array[j];
+      N_Move++;
+      i = j;
+      while(i >= k && Array[i - k] > temp){
+	Array[i] = Array[i - k];
+	N_Move++;
+	N_Comp++;
+	i = i -k;
+      }
+      Array[i] =0 temp;
+      N_move++;
+      if(i >= k){
+	N_Comp++;
+	//only want to increment if the second part of the while loop is false
+      }
+       
+    }
+  
+  }
+ 
+ 
+}
+
+void Shell_Selection_Sort(long *Array, int Size, double *N_Comp, double *N_Move)
+{
+  
+
+
+}
