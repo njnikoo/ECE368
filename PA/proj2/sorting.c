@@ -3,10 +3,17 @@
 #include "sorting.h"
 
 Node * Create(long val){
-  Node * created;
+  Node * created = malloc(sizeof(Node));
   created -> value = val;
   created -> next = NULL;
   return(created);
+}
+
+Node * Insert(Node * inserts,long val1){
+  Node * presnode = Create(val1);
+  presnode -> next = inserts;
+  return(presnode);
+
 }
 
 Node * Load_File(char * Filename){
@@ -17,24 +24,15 @@ Node * Load_File(char * Filename){
   }
   
   long vals;
-  Node * integers = Create(&vals);
-  int call = fscanf(fptr,"%d\n",vals);
-  if(call == 1){
-    Node * linklist = malloc((*Node) * sizeof(Node));
-  }
-  if(linklist == NULL){
-    printf("No Memory left!\n");
-    return NULL;
-  }
-  linklist -> next = integers -> val; // how to get its own value;
-  while(linklist -> next != NULL){
+  Node * integers = NULL;
+  int call = 0;
   
-  int store1 = fscanf(fptr,"%d",&linklist);
-
+  while(fscanf(fptr,"%li\n",&vals) != NULL){
+    integers = Insert(integers,vals);
   }
-  integers -> next = NULL;
+  
   fclose(fptr);
-  return(linklist);
+  return(integers);
 
 }
 
