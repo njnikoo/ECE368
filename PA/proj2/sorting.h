@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct_node{
+typedef struct node{
   long value;
-  struck_node *next;
+  struct node *next;
 }Node;
 
-typedef struct_list{
+typedef struct list{
   Node * node;
-  struct_list * next;
-  struct_list * prev;
+  struct list * next;
+  struct list * prev;
 }List;
 
 Node * Load_File(char *Filename);
 int Save_File(char *Filename,Node *list);
-Node *Shell_Sort(Node *list);
 Node * Create(long val);
-Node * Insert(Node * inserts,long val1);
+void Insert(Node * inserts,long val1);
+Node *Shell_Sort(Node *list);
+Node * Trav(Node * dummy,int length);
