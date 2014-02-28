@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct_node{
+  long value;
+  struck_node *next;
+}Node;
+
+typedef struct_list{
+  Node * node;
+  struct_list * next;
+}List;
+
+Node * Load_File(char *Filename);
+int Save_File(char *Filename,Node *list);
+Node *Shell_Sort(Node *list);

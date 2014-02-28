@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "sorting.h"
+
+Node * Load_File(char * Filename){
+  FILE * fptr = fopen(Filename,"r");
+  if(fptr == NULL){
+    printf("Did not load the File!\n");
+    return NULL;
+  }
+  Node * integers = (Node * )malloc(sizeof(Node));
+  
+  if(integers == NULL){
+    printf("No memory left!\n");
+    return NULL;
+  }
+  int store1 = fscanf(fptr,"%d",&integers);
+  integers -> next = NULL;
+  for(
+
+  }
+
+
+
+}
