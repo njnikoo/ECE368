@@ -35,11 +35,11 @@ Node * Load_File(char * Filename){
  
   dummys -> value = counter;
   fclose(fptr);  // closes file pointer
-  return(dummys); //the list of integers
+  return(dummys); //the list of integers starting with dummy node pointing to first element of list
 
 }
 
-int Save_File(char * Filename,Node * list)
+int Save_File(char * Filename,Node * list) //saves file to a output file
 {
   int count = 0;
   FILE * outputfile = fopen(Filename,"w");
@@ -55,7 +55,7 @@ int Save_File(char * Filename,Node * list)
 }
 
 Node * Trav(Node * dummy, int length){
-  Node * head;
+  Node * head;//gets any element in list that is needed
   int i = 0;
   head = dummy -> next;
   while(i < length){
@@ -68,7 +68,7 @@ Node * Trav(Node * dummy, int length){
 
 }
 
-Node *Shell_Sort(Node *list){
+Node *Shell_Sort(Node *list){//sorts the list 
   int k,p,gap,seq_count,i,j;
   Node * getsize;
   long temp;
@@ -77,7 +77,7 @@ Node *Shell_Sort(Node *list){
   k = 1;
   p = 0;
 
-  while(k < size){
+  while(k < size){  //creates sequence
     k = k * 3;
     p = p + 1;    
   }
@@ -87,16 +87,18 @@ Node *Shell_Sort(Node *list){
     gap = k;
     seq_count = p;
     do{
-      //gap = 1;
       for(j = gap;j < size;j++){
 	getsize = Trav(list,j);
-	//printf("%li\n", getsize->value);
 	temp = getsize -> value;
        	i = j;
-	while((i >= gap) && ((Trav(list,i - gap)) -> value) > temp){
+	
+	while((i >= gap) && ((Trav(list,i - gap)) -> value) > temp){//insertion sort starts
 	  getsize = Trav(list,i);
 	  getsize -> value = ((Trav(list,i - gap)) -> value);
 	  i = i - gap;
+	  if(i == gap){
+	    continue;
+	  }
 	}
 	getsize = Trav(list,i);
 	getsize -> value = temp;

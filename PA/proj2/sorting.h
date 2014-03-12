@@ -17,4 +17,4 @@ int Save_File(char *Filename,Node *list);
 Node * Create(long val);
 void Insert(Node * inserts,long val1);
 Node *Shell_Sort(Node *list);
-Node * Trav(Node * dummy,int length);
+Node * Trav(Node * dummy,int length,int k);
