@@ -4,8 +4,8 @@
 typedef struct node{
   int thisnode;
   struct node * parnode;
-  struct node * left;
-  struct node * right;
+  struct node * lcnode;
+  struct node * rcnode;
   char cutline;
   double width;
   double height;

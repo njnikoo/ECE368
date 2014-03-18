@@ -18,13 +18,19 @@ Tree * Load(char * Filename){
   for(i < 0;i < reading;i++){
     store = fscanf(fptr,"%d",bintree[i]);
     //the I need to figure out way to go right and down..
-    //then assign parent node
-    //if the thing int is -1 do not set left or right child if not then read into and set left and right child
-    //then cutline
-    //next the width and height
-    //the the x and y coordinates
-    //then need to start creating tree starting with 9 in terms of connecting
+    bintree -> parnode = fscanf(fptr,"%d",bintree[i]);  //then assign parent nodes
+    bintree -> lcnode = fscnaf(fptr,"%d",bintree[i]);
+    bintree -> rcnode = fscnaf(fptr,"%d",bintree[i]);//ask about -1 and NULL
+    bintree -> cutline = fscanf(fptr,"%d",bintree[i]);
+    if(bintree -> cutline = '-'){
+      //move to next value and read width then go to height after if
+    }
+    bintree -> width = fscanf(fptr,"%d",bintree[i]);
+    bintree -> height = fscanf(fptr,"%d",bintree[i]);
+   
   }
   
-  //Then close the file pointer and return the tree back. 
+  fclose(fptr);
+  return bintree;
+
 }
