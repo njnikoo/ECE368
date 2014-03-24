@@ -14,5 +14,9 @@ typedef struct node{
 }Tree;
 
 Tree *Load(char * Filename);
+Tree *Pack(Tree * packtree);
+void preorder(Tree *packtree);
+void postorder(Tree *packtree);
+void inorder(Tree *packtree);
 
 

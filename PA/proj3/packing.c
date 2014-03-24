@@ -34,3 +34,44 @@ Tree * Load(char * Filename){
   return bintree;
 
 }
+
+
+Tree * Pack(Tree * packtree){
+  preorder(packtree);
+  inorder(packtree);
+  postorder(packtree);
+
+  
+  
+
+
+}
+
+void preorder(Tree * packtree){
+  if(packtree != NULL){
+    printf("%d",packtree -> current);
+    preorder(packtree -> lcnode);
+    preoder(packtree -> rcnode);
+  }
+
+}
+
+void postorder(Tree * packtree){
+  if(packtree != NULL){
+    postorder(packtree -> lcnode);
+    postorder(packtree -> rcnode);
+    printf("%d",packtree -> current);
+    
+  }
+
+}
+
+void inorder(Tree *packtree){
+  if(packtree != NULL){
+    inorder(packtree -> lcnode);
+    printf("%d",packtree -> current);
+    inorder(packtree -> rcnode); 
+
+  }
+
+}
