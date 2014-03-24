@@ -3,9 +3,9 @@
 
 typedef struct node{
   int thisnode;
-  struct node * parnode;
-  struct node * lcnode;
-  struct node * rcnode;
+  int parnode;
+  int lcnode;
+  int rcnode;
   char cutline;
   double width;
   double height;
@@ -14,9 +14,9 @@ typedef struct node{
 }Tree;
 
 Tree *Load(char * Filename);
-Tree *Pack(Tree * packtree);
-void preorder(Tree *packtree);
-void postorder(Tree *packtree);
-void inorder(Tree *packtree);
+//Tree *Pack(Tree * packtree);
+void preorder(int rootnode,Tree * packtree);
+//void postorder(Tree *packtree);
+//void inorder(Tree *packtree);
 
 

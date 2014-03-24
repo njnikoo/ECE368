@@ -11,8 +11,10 @@ int main(int argc,char *argv[]){
   }
 
   Tree * binfile = Load(argv[1]);
-  
+  int root;
+  preorder(root,binfile);
  
   
+  return(0);
 
 }
