@@ -13,10 +13,9 @@ typedef struct node{
   double ycoord;
 }Tree;
 
-Tree *Load(char * Filename);
+Tree *Load(char * Filename,int * rootnode);
+void preorder(Tree* pretree,int rootnode);
+void inorder(Tree* intree,int rootnode);
+void postorder(Tree *posttree,int rootnode);
 //Tree *Pack(Tree * packtree);
-void preorder(int rootnode,Tree * packtree);
-//void postorder(Tree *packtree);
-//void inorder(Tree *packtree);
-
 

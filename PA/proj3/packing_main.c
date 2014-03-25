@@ -10,9 +10,17 @@ int main(int argc,char *argv[]){
     return 0;
   }
 
-  Tree * binfile = Load(argv[1]);
   int root;
-  preorder(root,binfile);
+  Tree * binfile = Load(argv[1],&root);
+  printf("Preorder: ");
+  preorder(binfile,root);
+  printf("\n\n");
+  printf("Inorder: ");
+  inorder(binfile,root);
+  printf("\n\n");
+  printf("Postorder: ");
+  postorder(binfile,root);
+  printf("\n\n");
  
   
   return(0);
